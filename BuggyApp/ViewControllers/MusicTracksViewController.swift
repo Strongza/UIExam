@@ -20,6 +20,7 @@ class MusicTracksViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     // Do any additional setup after loading the view.
     tableView.estimatedRowHeight = CGFloat(140.0)
     
@@ -47,18 +48,24 @@ class MusicTracksViewController: UIViewController {
 
 extension MusicTracksViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return tracks.isEmpty ? 0 : 10
+    return tracks.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: TrackTableViewCell.CellIdentifier, for: indexPath) as? TrackTableViewCell else {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: TrackTableViewCell.CellIdentifier, for: indexPath) as? TrackTableViewCell
+        else {
       return UITableViewCell()
     }
+
     let track: Track = tracks[indexPath.item]
+    print(track)
+    
     cell.configCell(track: track)
+    
     return cell
   }
 }
+
 
 extension MusicTracksViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -67,5 +74,15 @@ extension MusicTracksViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    
+    let storyboard = UIStoryboard(name: "Second", bundle: nil)
+    let vc = storyboard.instantiateViewController(withIdentifier: "MusicDetail") as! MusicTrackDetailViewController
+    vc.track = self.tracks[indexPath.item]
+    
+    
+    
+    
+    self.navigationController?.pushViewController(vc, animated: true)
+    
   }
 }

@@ -10,27 +10,107 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Third View Controller-->
         <scene sceneID="7Fw-5b-tL2">
             <objects>
-                <viewController id="6uy-RW-zmC" sceneMemberID="viewController">
+                <viewController id="6uy-RW-zmC" customClass="ThirdViewController" customModule="BuggyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ft-Gu-ggK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your name (nickname)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="pY8-7t-Svb">
+                                <rect key="frame" x="70" y="387.5" width="274" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="i9N-bJ-BVv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Appleseed (John)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="toi-hA-OX8">
+                                <rect key="frame" x="70" y="433" width="274" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                                <connections>
+                                    <action selector="NameEnter:" destination="6uy-RW-zmC" eventType="primaryActionTriggered" id="rvM-aI-ZCb"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pY8-7t-Svb" firstAttribute="centerX" secondItem="6ft-Gu-ggK" secondAttribute="centerX" id="1An-4g-ZpM"/>
+                            <constraint firstItem="J4c-v2-bSr" firstAttribute="trailing" secondItem="toi-hA-OX8" secondAttribute="trailing" constant="70" id="8Yv-dc-jEb"/>
+                            <constraint firstItem="toi-hA-OX8" firstAttribute="centerX" secondItem="6ft-Gu-ggK" secondAttribute="centerX" id="DB5-eW-vWC"/>
+                            <constraint firstItem="toi-hA-OX8" firstAttribute="leading" secondItem="J4c-v2-bSr" secondAttribute="leading" constant="70" id="L3I-1r-sNW"/>
+                            <constraint firstItem="pY8-7t-Svb" firstAttribute="leading" secondItem="J4c-v2-bSr" secondAttribute="leading" constant="70" id="Len-T4-nmU"/>
+                            <constraint firstItem="pY8-7t-Svb" firstAttribute="centerY" secondItem="6ft-Gu-ggK" secondAttribute="centerY" constant="-50" id="ZR2-Vb-g5S"/>
+                            <constraint firstItem="toi-hA-OX8" firstAttribute="centerY" secondItem="6ft-Gu-ggK" secondAttribute="centerY" id="rd2-HY-mal"/>
+                            <constraint firstItem="J4c-v2-bSr" firstAttribute="trailing" secondItem="pY8-7t-Svb" secondAttribute="trailing" constant="70" id="v8S-HL-oOa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="J4c-v2-bSr"/>
                     </view>
                     <navigationItem key="navigationItem" id="G7N-dU-juY"/>
+                    <connections>
+                        <outlet property="mNameField" destination="toi-hA-OX8" id="I7q-GJ-dv0"/>
+                        <segue destination="ip7-Py-UrR" kind="showDetail" id="dog-c4-G4I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F34-4h-Wlb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1657.9710144927537" y="1019.8660714285713"/>
         </scene>
-        <!--Third-->
+        <!--Welcome View Controller-->
+        <scene sceneID="yHE-BC-3bg">
+            <objects>
+                <viewController storyboardIdentifier="Welcome" id="ip7-Py-UrR" customClass="WelcomeViewController" customModule="BuggyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Qx-tu-ufg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUC-WM-zMR">
+                                <rect key="frame" x="171.5" y="387.5" width="71" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="HNb-xt-vU9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTk-5f-1bk">
+                                <rect key="frame" x="70" y="437.5" width="274" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ef4-iI-WCF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WTk-5f-1bk" firstAttribute="centerX" secondItem="3Qx-tu-ufg" secondAttribute="centerX" id="1dl-zG-aRj"/>
+                            <constraint firstItem="fav-9Q-IJO" firstAttribute="trailing" secondItem="WTk-5f-1bk" secondAttribute="trailing" constant="70" id="6ph-n2-COg"/>
+                            <constraint firstItem="WTk-5f-1bk" firstAttribute="leading" secondItem="fav-9Q-IJO" secondAttribute="leading" constant="70" id="IHP-ZN-T8t"/>
+                            <constraint firstItem="rUC-WM-zMR" firstAttribute="centerY" secondItem="3Qx-tu-ufg" secondAttribute="centerY" constant="-50" id="Mdb-h9-fhE"/>
+                            <constraint firstItem="rUC-WM-zMR" firstAttribute="centerX" secondItem="3Qx-tu-ufg" secondAttribute="centerX" id="QXK-4n-hnc"/>
+                            <constraint firstItem="WTk-5f-1bk" firstAttribute="centerY" secondItem="3Qx-tu-ufg" secondAttribute="centerY" id="ZnH-d7-Nn6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fav-9Q-IJO"/>
+                    </view>
+                    <connections>
+                        <outlet property="mName" destination="WTk-5f-1bk" id="jEA-M2-l4b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDw-yg-whM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2522" y="1022"/>
+        </scene>
+        <!--Profile-->
         <scene sceneID="oyB-S5-CR8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Su-Lu-zS9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Third" image="first" id="hjw-IW-tD5"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icons8-contact_card_filled" selectedImage="icons8-contact_card_filled" id="hjw-IW-tD5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b3f-QA-lzv">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -47,6 +127,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="icons8-contact_card_filled" width="25" height="25"/>
     </resources>
 </document>
